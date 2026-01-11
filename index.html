@@ -4,23 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Get PSG News</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+
+    <title>Moustapha Dieng's page.</title>
 </head>
 <body>
-    <div class="pages">
-        <span><a class="tabletop" href="news.html">latest news</a></span>
-        <span><a class="tabletop" href="about.html">about me</a></span>
-        <span><a class="tabletop" href="contacts.html">contacts</a></span>
-        <span><a class="tabletop" href="signing.html">latest signings</a></span>
+    <nav>
+
+
+       <span class="left-nav">
+            <a href="index.html">Moustapha Dieng</a>
+       </span>
+       <div class="right-nav">
+            <span id="abouted"><i class="fa-regular fa-address-card"></i>
+            <a href="#about">about</a></span>
+            <span id="projected"><i class="fa-solid fa-diagram-project"></i>
+            <a href="#projects" >projects</a></span>
+            <span id="contacted"><i class="fa-solid fa-address-book" style="color: #74C0FC;"></i>
+            <a href="#contact">contact</a></span>
+
+    
+           
+       </div>
+
+
+    </nav>
+    <div class="pfp">
+        <img class="picture"src="videos\Moustapha picture.png">
     </div>
     <div class="title">
-        <p id="title">GET PSG NEWS</p>
-        <p id="title-description">PSG news in real time.</p>
- 
+        <p id="hero">MOUSTAPHA"S PORTFOLIO</p>
     </div>
-    <div class="content">
-        <img src="C:\Users\1CpsT\images\Moustapha picture.png">
-        <p class="mission-statement">This website is a draft website where I will be testing what I learned in html and css by trying to make a website that is as good as possible. Naturally i am a beginner so you should not expect perfection immediately, but im hoping that i get better as i do it</p>
-    </div>
+    <section id="about">
+        
+        <p class="projecttitle">About</p>
+        <hr>
+        <p class="mission">This website showcases my journey with coding and creative projects.
+It currently features CapCut edits and a Python password generator, with more coming over time.</p>
+        <img class="coding" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.computersciencedegreehub.com%2Fwp-content%2Fuploads%2F2016%2F02%2Fwhat-is-coding-1024x683.jpg&f=1&nofb=1&ipt=8a1c895f7af4cda1a980b8f2dbe0d61ba89ba144f43eb331ba90007904b4e307">
+    </section>
+    <section id="projects">
+        <p class="projecttitle">Projects</p>
+        <div class="project">
+            <p class="projectentitle">Project 1: Capcut video.</p>
+            <hr>
+            <video width="600px" height="200px" controls >
+                <source src="videos/myvideo.mp4" type="video/mp4">"
+            </video>
+        </div>
+        <div class="project">
+            
+            <p class="projectentitle">Project 2: Capcut video.</p>
+            <hr>
+            <video width="600px" height="200px" controls>
+
+                <source src="videos\1228.mp4" type="">
+            </video>
+        </div>
+        <div class="project"></div>
+            <p class="projectentitle">Project 3: Capcut video.</p>
+            <hr>
+            <video width="600px" height="200px" controls>
+                <source src="videos\1202 (1).mp4" type="">
+            </video>
+        <div class="project">
+            <p class="projectentitle">Project 4: Python code, password generator.</p>
+            <hr>
+            <pre class="python-code"><code class="language-python">
+                
+import time
+import random
+
+
+print("Welcome to the password generator")
+
+
+time.sleep(2)
+
+
+print(
+   '''
+Here you will be able to generate a password
+using your character traits.
+''')
+
+
+username = input("Enter your name: ") #ask for name
+if len(username) < 3 or len(username) > 100:
+   print("Please type a reasonable username with more characters than 3 and less characters than 100")
+   username = input("Enter your name again: ")
+   while True:  #Verify that the user typed in a valid username
+       print("Please enter a valid username")
+       username = input("Enter your name again: ")
+       if len(username) > 3 or len(username) == 3 or len(username) == 100 or len(username) < 100:
+           break
+
+
+age = input("Enter your age .: ") #ask for age
+if int(age) < 10:
+   print("Please enter a valid age")
+   age= input("Enter your age again: ")
+   while True : #Verify that the user typed in a valid age
+       print("Please enter a valid age")
+       age = input("Enter your age again: ")
+       if int(age) > 10 or int(age) == 10:
+           break
+
+
+passion = input("Enter your passion: ") #ask for passion
+favorite_sport = input("Enter your favorite sport: ") #ask for favorite sport
+
+
+def scrambling(word):
+   new_length = len(word) // 2
+   half_word = word[0:new_length]
+   return half_word
+
+
+passion_scramble =scrambling(passion)
+favorite_sport_scramble = scrambling(favorite_sport)
+username_scramble = scrambling(username)
+
+
+scramble_list = [passion_scramble, favorite_sport_scramble, username_scramble]
+random_password_list = []
+
+
+password_scrmbl_counter = 0
+while True:
+   random.shuffle(scramble_list)
+   random_password_list.append("".join(scramble_list))
+   password_scrmbl_counter += 1
+   if password_scrmbl_counter == 50:
+       break
+
+
+
+
+appearance_counter = {}
+for password in random_password_list:
+   if password in appearance_counter:
+       appearance_counter[password] += 1
+   else:
+       appearance_counter[password] = 1
+
+
+new_unique_list = list(appearance_counter.keys())
+random.shuffle(new_unique_list)
+newnew_password = new_unique_list[0]+age
+print(f"Your generated password is {newnew_password.title()}")
+
+
+file = open("passwords.txt", "a")
+file.write(newnew_password+"\n")
+file = open("passwords.txt", "r")
+            </code></pre>
+        </div>
+        <div class="project"></div>
+    </section>
+    <section id="contact">
+        <p class="projecttitle">Contact:</p>
+        <div class="instagram" >
+            <i class="fa-brands fa-instagram" ></i>
+            <a id="instagram" href="https://www.instagram.com">instagram</a>
+        </div>
+        <div class="Twitter">
+            <i class="fa-brands fa-twitter"></i>
+            <a id="twitter" href="https://www.x.com">Twitter</a>
+        </div>
+        <div class="youtube">
+            <i class="fa-brands fa-youtube"></i>
+            <a id="youtube" href="https://www.youtube.com">Youtube</a>
+        </div>
+
+    </section>
+
 </body>
 </html>
